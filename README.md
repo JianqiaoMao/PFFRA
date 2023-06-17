@@ -61,9 +61,20 @@ For a simple example of using, please check the Jupyter Notebook [file](https://
 In this tutorial, we generate a synthetic dataset with 3 sinusoidal signals containing different frequency components (10, 20, 50Hz) as features. The target variable is the linear combination of the three components. And we train a XGBM regressor for a demonstration purpose, which means, by the end of the tutorial, we aim to reveal these features' contribution to the prediction series in frequency domain.
 
 1. Import PFFRA lib and other required libs.
-
 ![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/5351a438-011c-4ea4-816f-a64793924a61)
 
+2. Generate synthetic data for regression task.
+![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/ca991a91-88b0-4f1c-abac-1c28c231b94c)
+
+3. Train a XGBM model and generate predictions.
+![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/7cc8bb4c-ccb5-47e0-a92b-936b9101dbbc)
+
+4. Apply PFFRA to draw spectrum figures directly for a given interested feature index.
+
+![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/d176ca0e-61a9-4849-a4d5-9c10a8d5c3b1)
+
+5. Investigate multiple features and output their permutation spectrum data.
+![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/665091f6-f635-45d9-a59d-c9daf7a0e3f7)
 
 ## Reference
 
