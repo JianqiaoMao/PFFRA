@@ -125,13 +125,13 @@ class PermFeatureFreqRespoAnalysis:
         specturm_intereted, specturm_other, specturm_all, frq_range = self.gen_specturm()
         frq_range = frq_range[1:]
 
-        DC_intereted_feature = specturm_intereted[0:]
+        DC_intereted_feature = specturm_intereted[0]
         specturm_intereted_feature = specturm_intereted[1:]
 
-        DC_other_feature = specturm_other[0:]
+        DC_other_feature = specturm_other[0]
         specturm_permu_feature = specturm_other[1:]
 
-        DC_all = specturm_all[0:]
+        DC_all = specturm_all[0]
         specturm_all = specturm_all[1:]
 
         fig = plt.figure()
