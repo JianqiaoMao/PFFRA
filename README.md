@@ -21,11 +21,11 @@ To check more detail about the PF-FRA algorithm, please find it [here](https://a
 
 **Input:** 
 
-\t Dataset with N features $X = {x_i; i = 1,2,3,...,N}$
+&nbsp;Dataset with N features $X = {x_i; i = 1,2,3,...,N}$
     
-Interested feature m  
+&nbsp;Interested feature m  
     
-Time-series model $f(x,t;\gamma)$
+&nbsp;Time-series model $f(x,t;\gamma)$
 
 **Output:** Spectrum pair of the model response with and without the interested-feature permutation
 
