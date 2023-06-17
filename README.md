@@ -70,11 +70,10 @@ In this tutorial, we generate a synthetic dataset with 3 sinusoidal signals cont
 ![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/7cc8bb4c-ccb5-47e0-a92b-936b9101dbbc)
 
 4. Apply PFFRA to draw spectrum figures directly for a given interested feature index.
-
-![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/d176ca0e-61a9-4849-a4d5-9c10a8d5c3b1)
+![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/4803d79a-5a5a-47be-b852-12453d5861e5)
 
 5. Investigate multiple features and output their permutation spectrum data.
-![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/665091f6-f635-45d9-a59d-c9daf7a0e3f7)
+![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/33337ccd-986d-475e-a46b-8830f52de0ef)
 
 ## Reference
 
