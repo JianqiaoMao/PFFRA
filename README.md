@@ -41,6 +41,7 @@ To check more detail about the PF-FRA algorithm, please find it [here](https://a
 5. Repeat steps 2 to 4 by substituting other features with their mean values as interested-feature-remained dataset ${X_{\{ i\} /\{i-m\}}}$ to compute the spectrum of ${{\hat y}_{\{ i\} /\{i-m\}}}$.
 6. Compare the spectrum pair of the model response for the two modified datasets in the frequency domain.
 
+---
 ## Example Demo.
 
 Coming soon...
