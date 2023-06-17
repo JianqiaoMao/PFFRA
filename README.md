@@ -58,6 +58,13 @@ To check more detail about the PF-FRA algorithm, please find it [here](https://a
 
 For a simple example of using, please check the Jupyter Notebook [file](https://github.com/JianqiaoMao/PFFRA/blob/main/Tutorial.ipynb).
 
+In this tutorial, we generate a synthetic dataset with 3 sinusoidal signals containing different frequency components (10, 20, 50Hz) as features. The target variable is the linear combination of the three components. And we train a XGBM regressor for a demonstration purpose, which means, by the end of the tutorial, we aim to reveal these features' contribution to the prediction series in frequency domain.
+
+1. Import PFFRA lib and other required libs.
+
+![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/5351a438-011c-4ea4-816f-a64793924a61)
+
+
 ## Reference
 
 *[1] Hooker, Sara, et al. "A benchmark for interpretability methods in deep neural networks." arXiv preprint arXiv:1806.10758 (2018).*
