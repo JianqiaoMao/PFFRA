@@ -20,12 +20,11 @@ To check more detail about the PF-FRA algorithm, please find it [here](https://a
 #### Algorithm: Permutation Feature-based Frequency Response Analysis (PF-FRA)
 
 **Input:** 
-
-    Dataset with N features $X = {x_i; i = 1,2,3,...,N}$
+Dataset with N features $X = {x_i; i = 1,2,3,...,N}$
     
-    Interested feature m  
+Interested feature m  
     
-    Time-series model $f(x,t;\gamma)$
+Time-series model $f(x,t;\gamma)$
 
 **Output:** Spectrum pair of the model response with and without the interested-feature permutation
 
