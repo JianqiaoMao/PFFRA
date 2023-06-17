@@ -56,7 +56,7 @@ To check more detail about the PF-FRA algorithm, please find it [here](https://a
 ---
 ## Example Demo.
 
-Coming soon...
+For a simple example of using, please check the Jupyter Notebook [file](https://github.com/JianqiaoMao/PFFRA/blob/main/Tutorial.ipynb).
 
 ## Reference
 
