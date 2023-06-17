@@ -122,7 +122,7 @@ class PermFeatureFreqRespoAnalysis:
         Returns:
         None
         """
-        specturm_intereted, specturm_other, specturm_all, frq_range = self.gen_permu_specturm()
+        specturm_intereted, specturm_other, specturm_all, frq_range = self.gen_specturm()
         frq_range = frq_range[1:]
 
         DC_intereted_feature = specturm_intereted[0:]
