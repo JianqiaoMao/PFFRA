@@ -1,6 +1,18 @@
 # PFFRA: Permutation Feature-based Frequency Response Analysis
 PFFRA: An Interpretable Machine Learning technique to analyse the contribution of features in the frequency domain. This method is inspired by permutation feature importance analysis but aims to quantify and analyse the time-series predictive model's mechanism from a global perspective.
 
+#### Citing
+
+Please use one of the following to cite the code of this repository.
+
+```
+@article{mao2021interpreting,
+  title={Interpreting machine learning models for room temperature prediction in non-domestic buildings},
+  author={Mao, Jianqiao and Ryan, Grammenos},
+  journal={arXiv preprint arXiv:2111.13760},
+  year={2021}
+```
+
 ## Background
 
 ### Permutation Feature Importance Analysis
