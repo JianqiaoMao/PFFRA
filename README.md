@@ -1,3 +1,5 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
 # PFFRA: Permutation Feature-based Frequency Response Analysis
 PFFRA: An Interpretable Machine Learning technique to analyse the contribution of features in the frequency domain. This method is inspired by permutation feature importance analysis but aims to quantify and analyse the time-series predictive model's mechanism from a global perspective.
 
@@ -14,6 +16,19 @@ Permutation feature importance is another model-agnostic method originally appli
 Existing IML techniques are not designed to explain time-series machine learning models. In our recent work [5], we propose a new global interpretation technique called Permutation Feature-based Frequency Response Analysis (**PF-FRA**) to investigate the contribution of interested features in the frequency domain. Briefly, **PF-FRA** compares frequency responses of the given model based on the permuted dataset. These generated spectrums enable the user to identify the interested features' contribution to different frequency ranges. In this case, the user may identify if a feature leads to short- or long-term trend in the time-series model's predictions.
 
 To check more detail about the PF-FRA algorithm, please find it [here](https://arxiv.org/abs/2111.13760).
+
+## Algorithm
+
+$$
+\text{Algorithm} \quad \text{Name} \\
+\text{Input}: \text{description of input} \\
+\text{Output}: \text{description of output} \\
+\text{Step 1}: \text{description of step 1} \\
+\text{Step 2}: \text{description of step 2} \\
+\quad \vdots \\
+\text{Step N}: \text{description of step N} \\
+\text{End}
+$$
 
 ## Example Demo.
 
