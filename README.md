@@ -20,7 +20,6 @@ To check more detail about the PF-FRA algorithm, please find it [here](https://a
 #### Algorithm: Permutation Feature-based Frequency Response Analysis (PF-FRA)
 
 **Input:** 
-
     Dataset with N features $X = {x_i; i = 1,2,3,...,N}$
     
     Interested feature m  
@@ -33,7 +32,7 @@ To check more detail about the PF-FRA algorithm, please find it [here](https://a
 
 1. Train the time-series model $f(x,t;\gamma)$ by the dataset with all features $X$.
 2. Based on the dataset X, generate an interested-feature-permutated dataset ${X_{\{ i\} /m}}$ by substituting the interested feature m with its mean value.
-3. Generate prediction series ${{\hat y}_{\{ i\} /m}}$ on the interested-feature-permutated dataset.
+3. Generate prediction series ${\hat y}_{\{ i\} /m}$ on the interested-feature-permutated dataset.
 4. Compute the spectrum of ${{\hat y}_{\{ i\} /m}}$, using Fourier Transformation expressed by Eq. (1) :
 
     $F(w) = \int_{-\infty}^{+\infty} f(t)e^{-jwt} dt$    (1)
