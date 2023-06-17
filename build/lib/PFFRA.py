@@ -94,23 +94,23 @@ class PermFeatureFreqRespoAnalysis:
 
         return one_sided_fourier, freq_axis
 
-    def gen_specturm(self):
+    def gen_spectrum(self):
         """
         Generate frequency spectra for the predictions.
 
         Returns:
-        - specturm_interested: Frequency spectrum for predictions with other feature(s) permuted.
-        - specturm_other: Frequency spectrum for predictions with interested feature(s) permuted.
-        - specturm_all: Frequency spectrum for the original predictions.
+        - spectrum_interested: Frequency spectrum for predictions with other feature(s) permuted.
+        - spectrum_other: Frequency spectrum for predictions with interested feature(s) permuted.
+        - spectrum_all: Frequency spectrum for the original predictions.
         - frq_range: Frequency range corresponding to the spectra.
         """
         pred_interested_feature, pred_other_feature = self.permu_pred()
 
-        specturm_other, frq_range = self.one_sided_fft(pred_other_feature)
-        specturm_interested, frq_range = self.one_sided_fft(pred_interested_feature)
-        specturm_all, frq_range = self.one_sided_fft(self.y)
+        spectrum_other, frq_range = self.one_sided_fft(pred_other_feature)
+        spectrum_interested, frq_range = self.one_sided_fft(pred_interested_feature)
+        spectrum_all, frq_range = self.one_sided_fft(self.y)
 
-        return specturm_interested, specturm_other, specturm_all, frq_range
+        return spectrum_interested, spectrum_other, spectrum_all, frq_range
 
     def show(self, rename_feature='Interested Feature'):
         """
@@ -122,17 +122,17 @@ class PermFeatureFreqRespoAnalysis:
         Returns:
         None
         """
-        specturm_intereted, specturm_other, specturm_all, frq_range = self.gen_specturm()
+        spectrum_intereted, spectrum_other, spectrum_all, frq_range = self.gen_spectrum()
         frq_range = frq_range[1:]
 
-        DC_intereted_feature = specturm_intereted[0]
-        specturm_intereted_feature = specturm_intereted[1:]
+        DC_intereted_feature = spectrum_intereted[0]
+        spectrum_intereted_feature = spectrum_intereted[1:]
 
-        DC_other_feature = specturm_other[0]
-        specturm_permu_feature = specturm_other[1:]
+        DC_other_feature = spectrum_other[0]
+        spectrum_permu_feature = spectrum_other[1:]
 
-        DC_all = specturm_all[0]
-        specturm_all = specturm_all[1:]
+        DC_all = spectrum_all[0]
+        spectrum_all = spectrum_all[1:]
 
         fig = plt.figure()
         plt.rcParams["axes.labelsize"] = 14
@@ -140,14 +140,13 @@ class PermFeatureFreqRespoAnalysis:
         plt.rcParams["xtick.labelsize"] = "large"
         plt.rcParams["ytick.labelsize"] = "large"
         ax1 = fig.add_subplot(211)
-        ax1.plot(frq_range, specturm_intereted_feature, label="{} (DC: {:.2f})".format(rename_feature, DC_intereted_feature))
-        ax1.plot(frq_range, specturm_permu_feature, label="Other Features (DC: {:.2f})".format(DC_other_feature))
+        ax1.plot(frq_range, spectrum_intereted_feature, label="{} (DC: {:.2f})".format(rename_feature, DC_intereted_feature))
+        ax1.plot(frq_range, spectrum_permu_feature, label="Other Features (DC: {:.2f})".format(DC_other_feature))
         ax1.legend()
         ax1.set_xlabel("Frequency (Hz)")
-        ax1.set_ylabel("Magnitude")
         ax1.set_title("Frequency Responses for the {} Feature and Others".format(rename_feature))
         ax2 = fig.add_subplot(212)
-        ax2.plot(frq_range, specturm_all, label="All features (DC: {:.2f})".format(DC_all), c="g")
+        ax2.plot(frq_range, spectrum_all, label="All features (DC: {:.2f})".format(DC_all), c="g")
         ax2.legend()
         ax2.set_xlabel("Frequency (Hz)")
         ax2.set_ylabel("Magnitude")
