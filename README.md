@@ -21,7 +21,7 @@ To check more detail about the PF-FRA algorithm, please find it [here](https://a
 
 **Input:** 
 
-\quad Dataset with N features $X = {x_i; i = 1,2,3,...,N}$
+\t Dataset with N features $X = {x_i; i = 1,2,3,...,N}$
     
 Interested feature m  
     
