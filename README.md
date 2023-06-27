@@ -105,7 +105,7 @@ pffra.show(sample_rate = 100, mode = 'mean', rename_feature = "x0=sin(2 *pi*37*t
 ```
 ![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/beb2f901-4e6b-448c-b5f2-cd23225e5e0c)
 
-5. Investigate multiple features and output their permutation spectrum data using 'shuffle' mode.
+5. Investigate multiple features and output their permutation spectrum data using 'shuffle' mode (**New feature in v0.1.2**).
 
 ```python
 fig = plt.figure(figsize = (14,6))
@@ -169,4 +169,8 @@ Simultaneously." Journal of Machine Learning Research 20.177 (2019): 1-81.*
 ---
 ## v0.1.2 Update
 
+1. Open more customised interfaces to give users more freedom to use blocks in the PF-FRA algorithm.
+  - Now each built-in method of **PermFeatureFreqRespoAnalysis** obkect is callable to allow users to input customised parameters.
+  - Add 'shuffle' mode for feature permutation.
+2. Correct some minor typos in the code to improve its readability.
 
