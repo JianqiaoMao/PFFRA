@@ -170,7 +170,7 @@ Simultaneously." Journal of Machine Learning Research 20.177 (2019): 1-81.*
 ## v0.1.2 Update
 
 1. Open more customised interfaces to give users more freedom to use blocks in the PF-FRA algorithm.
-  - Now each built-in method of **PermFeatureFreqRespoAnalysis** obkect is callable to allow users to input customised parameters.
+  - Now each built-in method of **PermFeatureFreqRespoAnalysis** object is callable to allow users to input customised parameters.
   - Add 'shuffle' mode for feature permutation.
 2. Correct some minor typos in the code to improve its readability.
 
