@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='PFFRA',
-    version='0.1',
+    version='0.1.2',
     author='Jianqiao Mao',
     author_email='jxm1417@student.bham.ac.uk',
     license='GNU GPL-2.0',

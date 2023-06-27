@@ -1,18 +1,6 @@
 # PFFRA: Permutation Feature-based Frequency Response Analysis
 PFFRA: An Interpretable Machine Learning technique to analyse the contribution of features in the frequency domain. This method is inspired by permutation feature importance analysis but aims to quantify and analyse the time-series predictive model's mechanism from a global perspective.
 
-### Citing
-
-Please use one of the following to cite the code of this repository.
-
-```
-@article{mao2021interpreting,
-  title={Interpreting machine learning models for room temperature prediction in non-domestic buildings},
-  author={Mao, Jianqiao and Ryan, Grammenos},
-  journal={arXiv preprint arXiv:2111.13760},
-  year={2021}
-```
-
 ## Background
 
 ### Permutation Feature Importance Analysis
@@ -56,24 +44,7 @@ To check more detail about the PF-FRA algorithm, please find it [here](https://a
 ---
 ## Example Demo.
 
-For a simple example of using, please check the Jupyter Notebook [file](https://github.com/JianqiaoMao/PFFRA/blob/main/Tutorial.ipynb).
-
-In this tutorial, we generate a synthetic dataset with 3 sinusoidal signals containing different frequency components (10, 20, 50Hz) as features. The target variable is the linear combination of the three components. And we train a XGBM regressor for a demonstration purpose, which means, by the end of the tutorial, we aim to reveal these features' contribution to the prediction series in frequency domain.
-
-1. Import PFFRA lib and other required libs.
-![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/5351a438-011c-4ea4-816f-a64793924a61)
-
-2. Generate synthetic data for regression task.
-![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/ca991a91-88b0-4f1c-abac-1c28c231b94c)
-
-3. Train a XGBM model and generate predictions.
-![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/7cc8bb4c-ccb5-47e0-a92b-936b9101dbbc)
-
-4. Apply PFFRA to draw spectrum figures directly for a given interested feature index.
-![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/4803d79a-5a5a-47be-b852-12453d5861e5)
-
-5. Investigate multiple features and output their permutation spectrum data.
-![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/33337ccd-986d-475e-a46b-8830f52de0ef)
+Coming soon...
 
 ## Reference
 
