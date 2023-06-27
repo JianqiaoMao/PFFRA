@@ -13,6 +13,21 @@ Please use one of the following to cite the code of this repository.
   year={2021}
 ```
 
+## Installation and getting started
+
+We currently offer seamless installation with `pip`. 
+
+Simply:
+```
+pip install PFFRA
+```
+
+Alternatively, download the current distribution of the package, and run:
+```
+pip install .
+```
+in the root directory of the decompressed package.
+
 ## Background
 
 ### Permutation Feature Importance Analysis
