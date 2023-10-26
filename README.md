@@ -6,13 +6,22 @@ PFFRA: An Interpretable Machine Learning technique to analyse the contribution o
 Please use one of the following to cite the code of this repository.
 
 ```
-@article{mao2023data,
-  title={Data analysis and interpretable machine learning for HVAC predictive control: A case-study based implementation},
-  author={Mao, Jianqiao and Grammenos, Ryan and Karagiannis, Konstantinos},
-  journal={Science and Technology for the Built Environment},
-  pages={1--21},
-  year={2023},
-  publisher={Taylor \& Francis}
+@article{doi:10.1080/23744731.2023.2239081,
+author = {Jianqiao Mao, Ryan Grammenos and Konstantinos Karagiannis},
+title = {Data analysis and interpretable machine learning for HVAC predictive control: A case-study based implementation},
+journal = {Science and Technology for the Built Environment},
+volume = {29},
+number = {7},
+pages = {698-718},
+year = {2023},
+publisher = {Taylor & Francis},
+doi = {10.1080/23744731.2023.2239081},
+URL = { 
+        https://doi.org/10.1080/23744731.2023.2239081
+},
+eprint = { 
+        https://doi.org/10.1080/23744731.2023.2239081
+}
 }
 ```
 
