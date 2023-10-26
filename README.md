@@ -54,7 +54,7 @@ Permutation feature importance is another model-agnostic method originally appli
 
 Existing IML techniques are not designed to explain time-series machine learning models. In our recent work [5], we propose a new global interpretation technique called Permutation Feature-based Frequency Response Analysis (**PF-FRA**) to investigate the contribution of interested features in the frequency domain. Briefly, **PF-FRA** compares frequency responses of the given model based on the permuted dataset. These generated spectrums enable the user to identify the interested features' contribution to different frequency ranges. In this case, the user may identify if a feature leads to short- or long-term trend in the time-series model's predictions.
 
-To check more detail about the PF-FRA algorithm, please find it [here]([https://www.tandfonline.com/doi/full/10.1080/23744731.2023.2239081]).
+To check more detail about the PF-FRA algorithm, please find it [here](https://www.tandfonline.com/doi/full/10.1080/23744731.2023.2239081).
 
 ## Algorithm
 
