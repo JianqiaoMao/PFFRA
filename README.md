@@ -87,7 +87,7 @@ To check more detail about the PF-FRA algorithm, please find it [here](https://w
 
 For a simple example of using, please check the Jupyter Notebook [file](https://github.com/JianqiaoMao/PFFRA/blob/main/Tutorial.ipynb).
 
-In this tutorial, we generate a synthetic dataset with 3 sinusoidal signals containing different frequency components (10, 20, 50Hz) as features. The target variable is the linear combination of the three components. And we train a XGBM regressor for a demonstration purpose, which means, by the end of the tutorial, we aim to reveal these features' contribution to the prediction series in frequency domain.
+In this tutorial, we generate a synthetic dataset with 3 sinusoidal signals containing different frequency components (10, 37, 39Hz) as features. The target variable is the linear combination of the three components. And we train a XGBM regressor for a demonstration purpose, which means, by the end of the tutorial, we aim to reveal these features' contribution to the prediction series in frequency domain.
 
 1. Import PFFRA lib and other required libs.
 
