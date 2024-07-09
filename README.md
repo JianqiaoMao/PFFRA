@@ -204,10 +204,15 @@ Simultaneously." Journal of Machine Learning Research 20.177 (2019): 1-81.*
 *[5] Mao, Jianqiao, and Grammenos Ryan. "Interpreting machine learning models for room temperature prediction in non-domestic buildings." arXiv preprint arXiv:2111.13760 (2021).*
 
 ---
+
+## v1.0.1 Update
+
+1. Release new feature enabling wavelet-based transform for time-freqency analysis and interpretation. Details can be checked in the new released tutorial notebook.
+
 ## v0.1.2 Update
 
 1. Open more customised interfaces to give users more freedom to use blocks in the PF-FRA algorithm.
-  - Now each built-in method of **PermFeatureFreqRespoAnalysis** object is callable to allow users to input customised parameters.
-  - Add 'shuffle' mode for feature permutation.
+  - Now each built-in method of ``PermFeatureFreqRespoAnalysis`` object is callable to allow users to input customised parameters.
+  - Add ``shuffle`` mode for feature permutation.
 2. Correct some minor typos in the code to improve its readability.
 

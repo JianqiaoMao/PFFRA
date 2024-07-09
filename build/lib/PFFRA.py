@@ -4,7 +4,9 @@ Created on Tue Feb 14 23:11:20 2023
 
 @author: Jianqiao Mao
 """
+
 import numpy as np
+import pywt
 import matplotlib.pyplot as plt
         
 class PermFeatureFreqRespoAnalysis:
@@ -103,6 +105,24 @@ class PermFeatureFreqRespoAnalysis:
 
         return one_sided_fourier, freq_axis
 
+    def cwt_analysis(self, signal, sample_rate, freq_range, wavelet='cmor'):
+        """
+        Perform continuous wavelet transform (CWT) on the input signal.
+
+        Parameters:
+        - signal: Input signal as a 1-D numpy array.
+        - sample_rate: Sample rate of the data.
+        - freq_range: Frequency range for the CWT.
+        - wavelet: Wavelet to use for the CWT. Default: 'cmor'.
+
+        Returns:
+        - coeffs: CWT coefficients of the signal.
+        - freqs: Frequencies corresponding to the CWT coefficients.
+        """
+        scales = pywt.frequency2scale(wavelet, freq_range/sample_rate)
+        coeffs, freqs = pywt.cwt(data=signal, scales=scales, wavelet=wavelet, sampling_period=1/sample_rate)
+        return np.abs(coeffs[:-1, :-1]), freqs
+
     def gen_spectrum(self, pred_interested_feature, pred_other_feature, pred_all_feature, sample_rate):
         """
         Generate frequency spectra for the predictions.
@@ -120,13 +140,13 @@ class PermFeatureFreqRespoAnalysis:
         """
 
         spectrum_other, frq_range = self.one_sided_fft(pred_other_feature, sample_rate)
-        spectrum_interested, frq_range = self.one_sided_fft(pred_interested_feature, sample_rate)
-        spectrum_all, frq_range = self.one_sided_fft(pred_all_feature, sample_rate)
-        spectrum_true, frq_range = self.one_sided_fft(self.y, sample_rate)
+        spectrum_interested, _ = self.one_sided_fft(pred_interested_feature, sample_rate)
+        spectrum_all, _ = self.one_sided_fft(pred_all_feature, sample_rate)
+        spectrum_true, _ = self.one_sided_fft(self.y, sample_rate)
 
         return spectrum_interested, spectrum_other, spectrum_all, spectrum_true, frq_range
 
-    def show(self, sample_rate, mode = 'mean', rename_feature='Interested Feature'):
+    def show_spectrum(self, sample_rate, mode = 'mean', rename_feature='Interested Feature'):
         """
         Display the frequency responses.
 
@@ -158,8 +178,8 @@ class PermFeatureFreqRespoAnalysis:
         spectrum_true = spectrum_true[1:]
         
         fig = plt.figure()
-        plt.rcParams["axes.labelsize"] = 14
-        plt.rcParams["axes.titlesize"] = 16
+        plt.rcParams["axes.labelsize"] = 12
+        plt.rcParams["axes.titlesize"] = 12
         plt.rcParams["xtick.labelsize"] = "large"
         plt.rcParams["ytick.labelsize"] = "large"
         ax1 = fig.add_subplot(211)
@@ -167,15 +187,75 @@ class PermFeatureFreqRespoAnalysis:
         ax1.plot(frq_range, spectrum_permu_feature, label="Other Features (DC: {:.2f})".format(DC_other_feature))
         ax1.legend()
         ax1.set_xlabel("Frequency (Hz)")
-        ax1.set_title("Frequency Responses for the {} Feature and Others".format(rename_feature))
+        ax1.set_title("Frequency responses for predictions based on the {} Feature and Others".format(rename_feature))
         ax2 = fig.add_subplot(212)
         ax2.plot(frq_range, spectrum_all, label="All features (DC: {:.2f})".format(DC_all), c="g")
         ax2.plot(frq_range, spectrum_true, label = "True y (DC:{:.2F}".format(DC_true), c = 'k')
         ax2.legend()
         ax2.set_xlabel("Frequency (Hz)")
         ax2.set_ylabel("Magnitude")
-        ax2.set_title("Frequency Response for all features and the true target variable")
+        ax2.set_title("Frequency response for predictions based on all features and the true target variable")
         
         plt.tight_layout()
         plt.show()
         
+    def gen_wavelet(self, pred_interested_feature, pred_other_feature, pred_all_feature, sample_rate, freq_range, wavelet='cmor'):
+        """
+        Generate wavelet spectra for the predictions.
+        - pred_interested_feature: Predictions for the dataset with other feature(s) permuted.
+        - pred_other_feature: Predictions for the dataset with interested feature(s) permuted.
+        - pred_all_feature: Predictions for the original dataset with all features.
+        - sample_rate: Sample rate of the data.
+        - freq_range: Frequency range for the CWT.
+        - wavelet: Wavelet to use for the CWT. Default: 'cmor'.
+        
+        Returns:
+        - spectrum_interested: Wavelet spectrum for predictions with other feature(s) permuted.
+        - spectrum_other: Wavelet spectrum for predictions with interested feature(s) permuted.
+        - spectrum_all: Wavelet spectrum for the original predictions.
+        - spectrum_true: Wavelet spectrum for the original true target variable.
+        - frq_range: Frequency range corresponding to the spectra.
+        """
+        spectrum_other, frq_range = self.cwt_analysis(pred_other_feature, sample_rate, freq_range, wavelet)
+        spectrum_interested, _ = self.cwt_analysis(pred_interested_feature, sample_rate, freq_range, wavelet)
+        spectrum_all, _ = self.cwt_analysis(pred_all_feature, sample_rate, freq_range, wavelet)
+        spectrum_true, _ = self.cwt_analysis(self.y, sample_rate, freq_range, wavelet)
+
+        return spectrum_interested, spectrum_other, spectrum_all, spectrum_true, frq_range
+
+    def show_wavelet(self, sample_rate, freq_range, wavelet='cmor', mode = 'mean', rename_feature='Interested Feature'):
+        """
+        Display the wavelet spectra.
+
+        Parameters:
+        - sample_rate: Sample rate of the data.
+        - freq_range: Frequency range for the CWT.
+        - wavelet: Wavelet to use for the CWT. Default: 'cmor'.
+        - rename_feature: Name to display for the interested feature.
+        - mode: Mode for generating permuted datasets. Options: 'mean', 'median', 'most_frequent', 'shuffle'. Default: 'mean'.
+
+        Returns:
+        None
+        """
+
+        X_interested_feature, X_other_feature = self.permuted_dataset(mode)
+        pred_interested_feature, pred_other_feature, pred_all_feature = self.permu_pred(X_interested_feature, X_other_feature)
+        wavelets_freq = self.gen_wavelet(pred_interested_feature, pred_other_feature, pred_all_feature, sample_rate, freq_range, wavelet)
+        wavelets = wavelets_freq[:-1]
+        freq_range = wavelets_freq[-1]
+        
+        time_index = np.arange(0, len(pred_interested_feature))
+        fig, axs = plt.subplots(2, 2, figsize=(12, 8), sharex=True, sharey=True)
+        plt.rcParams["axes.labelsize"] = 12
+        plt.rcParams["axes.titlesize"] = 12
+        plt.rcParams["xtick.labelsize"] = "large"
+        plt.rcParams["ytick.labelsize"] = "large"
+        titles = ["intersted feature: {}".format(rename_feature), "other geatures", "predictions based on All Features", "True Target Variable"]
+        for i,ax in enumerate(axs.flatten()):
+            ax.set_xlabel("Time Index")
+            ax.set_ylabel("Frequency (Hz)")
+            pcm = ax.pcolormesh(time_index, freq_range, wavelets[i])
+            ax.set_title("Wavelets responses for {}".format(titles[i]))
+            plt.colorbar(pcm, ax=ax)
+        plt.tight_layout()
+        plt.show()
