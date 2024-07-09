@@ -207,7 +207,10 @@ Simultaneously." Journal of Machine Learning Research 20.177 (2019): 1-81.*
 
 ## v1.0.1 Update
 
-1. Release new feature enabling wavelet-based transform for time-freqency analysis and interpretation. Details can be checked in the new released tutorial notebook.
+1. Release new feature enabling wavelet transform-based PFFRA for time-freqency analysis and interpretation. Details can be checked in the new released tutorial notebook. Figure below shows the results:
+
+![wavelet_demo](https://github.com/JianqiaoMao/PFFRA/assets/60654068/50c049bf-6d06-4c7c-afc3-876b9cc1bc3a)
+
 
 ## v0.1.2 Update
 
