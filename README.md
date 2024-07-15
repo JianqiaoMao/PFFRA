@@ -138,7 +138,7 @@ plt.title("XGBM predicted time series")
 
 ```python
 pffra = PFFRA.PermFeatureFreqRespoAnalysis(y = y, X = X, model = model, interested_feature_index = 1)
-pffra.show(sample_rate = 100, mode = 'mean', rename_feature = "x0=sin(2 *pi*37*t)")
+pffra.show_spectrum(sample_rate = 100, mode = 'mean', rename_feature = "x2=sin(2 *pi*37*t)")
 ```
 ![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/beb2f901-4e6b-448c-b5f2-cd23225e5e0c)
 
