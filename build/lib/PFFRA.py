@@ -4,7 +4,8 @@ Created on Tue Feb 14 23:11:20 2023
 
 @author: Jianqiao Mao
 """
-
+import numpy as np
+import matplotlib.pyplot as plt
 import numpy as np
 import pywt
 import matplotlib.pyplot as plt
@@ -92,18 +93,22 @@ class PermFeatureFreqRespoAnalysis:
         - sample_rate: Sample rate of the data.
 
         Returns:
-        - one_sided_fourier: One-sided FFT of the signal.
-        - freq_axis: Frequency axis corresponding to the FFT values.
+        - amp: One-sided FFT of the signal (amplitude).
+        - freq: Frequency axis corresponding to the FFT values.
         """
-        n = signal.shape[0]
-        freq_resolution = sample_rate / n
+        N = len(signal)
+        Y = np.fft.fft(signal)
+        half_N = N // 2 if (N % 2 == 0) else (N + 1) // 2
+        Y_half = Y[:half_N]
 
-        signal_fourier = np.fft.fft(signal)
-        one_sided_fourier = np.abs(signal_fourier[:n // 2] * freq_resolution)
-
-        freq_axis = np.linspace(0, sample_rate / 2, n // 2)
-
-        return one_sided_fourier, freq_axis
+        amp = np.abs(Y_half) / N
+        if N % 2 == 0:
+            amp[1:-1] *= 2
+        else:
+            amp[1:] *= 2
+        freq = np.fft.fftfreq(N, 1/sample_rate)[:half_N]
+        
+        return amp, freq
 
     def cwt_analysis(self, signal, sample_rate, freq_range, wavelet='cmor'):
         """
@@ -258,4 +263,4 @@ class PermFeatureFreqRespoAnalysis:
             ax.set_title("Wavelets responses for {}".format(titles[i]))
             plt.colorbar(pcm, ax=ax)
         plt.tight_layout()
-        plt.show()
+        plt.show()        
