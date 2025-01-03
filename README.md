@@ -67,8 +67,7 @@ To check more detail about the PF-FRA algorithm, please find it [here](https://w
 ## Algorithm
 
 #### Algorithm: Permutation Feature-based Frequency Response Analysis (PF-FRA)
-![pffra_algorithm](https://github.com/user-attachments/assets/3836a38a-ddcc-43b2-a793-3e598d321b36)
-
+![pffra_algorithm](https://github.com/user-attachments/assets/eec8ff6b-e479-4d95-9284-eed84fbf6384)
 
 ## Example Demo.
 
