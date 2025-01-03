@@ -140,7 +140,9 @@ plt.title("XGBM predicted time series")
 pffra = PFFRA.PermFeatureFreqRespoAnalysis(y = y, X = X, model = model, interested_feature_index = 1)
 pffra.show_spectrum(sample_rate = 100, mode = 'mean', rename_feature = "x2=sin(2 *pi*37*t)")
 ```
-![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/beb2f901-4e6b-448c-b5f2-cd23225e5e0c)
+![FT_demo](https://github.com/user-attachments/assets/3922800b-6d01-4cf3-a742-beed312ba0ac)
+
+
 
 5. Investigate multiple features and output their permutation spectrum data using 'shuffle' mode (**New feature in v0.1.2**).
 
@@ -188,7 +190,8 @@ ax2.set_ylabel("Magnitude")
 ax2.set_title("Frequency Responses for the all components")
 plt.show()
 ```
-![image](https://github.com/JianqiaoMao/PFFRA/assets/60654068/597521b5-afba-49be-ae3d-d43a1a2076ff)
+![FT_demo2](https://github.com/user-attachments/assets/f714673d-3395-485d-bf90-c2643a907ee4)
+
 
 ## Reference
 
