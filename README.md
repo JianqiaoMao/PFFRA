@@ -170,19 +170,19 @@ plt.show()
 ```
 ![FT_demo2](https://github.com/user-attachments/assets/f714673d-3395-485d-bf90-c2643a907ee4)
 
-## v1.0.1 Update
-
-1. Release a new feature enabling wavelet transform-based PFFRA for time-freqency analysis and interpretation. Details can be checked in the new released tutorial notebook. Figure below shows the results:
-
-![wavelet_demo](https://github.com/JianqiaoMao/PFFRA/assets/60654068/50c049bf-6d06-4c7c-afc3-876b9cc1bc3a)
-
-
 ## v0.1.2 Update
 
 1. Open more customised interfaces to give users more freedom to use blocks in the PF-FRA algorithm.
   - Now each built-in method of ``PermFeatureFreqRespoAnalysis`` object is callable to allow users to input customised parameters.
   - Add ``shuffle`` mode for feature permutation.
 2. Correct some minor typos in the code to improve its readability.
+
+## v1.0.1 Update
+
+1. Release a new feature enabling wavelet transform-based PFFRA for time-freqency analysis and interpretation. Details can be checked in the new released tutorial notebook. Figure below shows the results:
+
+![wavelet_demo](https://github.com/JianqiaoMao/PFFRA/assets/60654068/50c049bf-6d06-4c7c-afc3-876b9cc1bc3a)
+
 
 ## Reference
 
